@@ -107,6 +107,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
+  /* ---------- Gallery Lightbox ---------- */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  let currentIndex = 0;
+
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lightboxImg.src = galleryItems[index].getAttribute('data-src');
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+  if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    lightboxImg.src = galleryItems[currentIndex].getAttribute('data-src');
+  });
+
+  if (lightboxNext) lightboxNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    lightboxImg.src = galleryItems[currentIndex].getAttribute('data-src');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || !lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft' && lightboxPrev) lightboxPrev.click();
+    if (e.key === 'ArrowRight' && lightboxNext) lightboxNext.click();
+  });
+
   /* ---------- Accordion ---------- */
   document.querySelectorAll('.accordion-header').forEach(header => {
     header.addEventListener('click', () => {
