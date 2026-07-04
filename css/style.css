@@ -4,7 +4,7 @@
    Display: Baloo 2  ·  Body: Nunito
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
 /* ---------- Tokens ---------- */
 :root {
@@ -33,13 +33,13 @@
   --belt-black: #14161c;
 
   /* Type */
-  --font-display: 'Baloo 2', 'Trebuchet MS', sans-serif;
-  --font-body: 'Nunito', 'Segoe UI', sans-serif;
+  --font-display: 'Anton', 'Arial Narrow', sans-serif;
+  --font-body: 'Archivo', 'Segoe UI', sans-serif;
 
-  /* Shape & depth */
-  --radius: 16px;
-  --radius-lg: 26px;
-  --radius-pill: 999px;
+  /* Shape & depth — sharp edition */
+  --radius: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 5px;
   --shadow-sm: 0 2px 10px rgba(16, 34, 74, 0.07);
   --shadow: 0 10px 30px rgba(16, 34, 74, 0.10);
   --shadow-lg: 0 24px 60px rgba(16, 34, 74, 0.16);
@@ -74,6 +74,13 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 input, select, textarea { font-family: inherit; }
 
 ::selection { background: var(--red); color: var(--white); }
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--blue-bright);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 12px; }
@@ -702,26 +709,38 @@ body.is-loading { overflow: hidden; }
   gap: 10px;
 }
 .hero-dots button {
-  width: 34px;
+  /* slim visual bar, but a 24px-tall touch target */
+  width: 38px;
+  height: 24px;
+  position: relative;
+  background: transparent;
+}
+.hero-dots button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
   height: 5px;
+  transform: translateY(-50%);
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.28);
-  overflow: hidden;
-  position: relative;
-  transition: background var(--transition);
 }
 .hero-dots button.active::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, var(--red-bright), #ff8397);
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 5px;
   border-radius: 4px;
-  transform-origin: left;
+  background: linear-gradient(90deg, var(--red-bright), #ff8397);
+  transform-origin: left center;
   animation: dotProgress 8s linear forwards;
 }
 @keyframes dotProgress {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from { transform: translateY(-50%) scaleX(0); }
+  to { transform: translateY(-50%) scaleX(1); }
 }
 
 /* Scroll cue */
@@ -2162,3 +2181,138 @@ textarea.form-control { min-height: 130px; resize: vertical; }
   .has-js .hero-badge, .has-js .hero-kicker, .has-js .hero-lede,
   .has-js .hero-btns, .has-js .hero-stats, .has-js .hero h1 .word { opacity: 1; transform: none; }
 }
+
+/* ==========================================================================
+   SHARP EDITION — bold athletic type, hard angles, premium punch
+   (cascade layer: overrides the base component styles above)
+   ========================================================================== */
+
+/* --- Type system: Anton for impact display, Archivo 800 for UI --- */
+h1, h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+h3, h4 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.stat-item .stat-num, .master-name, .marquee-item, .mobile-menu a,
+.preloader-title, .step-num, .pillar .watermark, .hero-stat .num,
+.testimonial-avatar, .pillar-num {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.master-name, .mobile-menu a { text-transform: uppercase; }
+.btn, .tag, .card-tag, .card-link, .footer-heading, .nav-logo-text .name,
+.schedule-card-head .t, .badge-float .t1, .age-range, .testimonial-name,
+.hero-kicker, .camp-card-header-content h3 {
+  font-family: var(--font-body);
+  font-weight: 800;
+}
+.camp-card-header-content h3 { font-family: var(--font-body); }
+.hero h1 { letter-spacing: 0.01em; line-height: 1.04; }
+.section-title { letter-spacing: 0.02em; }
+
+/* --- Buttons: hard-edged, uppercase, wide-tracked --- */
+.btn {
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.86rem;
+}
+.btn-lg { font-size: 0.95rem; }
+
+/* --- Angular signatures --- */
+.section-label {
+  border-radius: 0;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  padding: 8px 24px;
+}
+.divider { transform: skewX(-22deg); border-radius: 0; }
+.hero-badge { border-radius: 0; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); }
+.breadcrumb { border-radius: 0; clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); }
+.marquee { transform: rotate(-1.6deg) scale(1.02); }
+.alert-banner { letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.78rem; }
+
+/* --- Sharpen every hardcoded radius --- */
+.hero-stat { border-radius: 10px; }
+.hero-stat .ico { border-radius: 6px; }
+.feature-icon { border-radius: 8px; }
+.info-card-icon { border-radius: 8px; }
+.step-num { border-radius: 6px; }
+.social-link { border-radius: 6px; }
+.footer-contact-item i { border-radius: 6px; }
+.camp-feature i { border-radius: 6px; }
+.accordion-icon { border-radius: 6px; }
+.testimonial-avatar { border-radius: 6px; }
+.photo-stack .badge-float { border-radius: 8px; }
+.photo-stack .badge-float .ico { border-radius: 6px; }
+.photo-stack .photo-float { border-radius: 8px; }
+.cta-inner { border-radius: 14px; }
+.back-to-top { border-radius: 8px; }
+.hamburger { border-radius: 8px; }
+.master-spotlight-img::before { border-radius: 12px; }
+.master-spotlight-img::after { border-radius: 12px; }
+.form-control { border-radius: var(--radius); }
+.belt-step-color { border-radius: 3px; }
+.preloader-belt, .preloader-belt-fill { border-radius: 0; }
+.hero-dots button::before, .hero-dots button.active::after { border-radius: 0; }
+
+/* Skewed heading kicker accent on section titles that follow a label */
+.section-label + .section-title { position: relative; }
+
+/* ==========================================================================
+   CAMP MODE — same bold voice, playful kid-friendly shapes
+   (applies on camp.html via <body class="camp-mode">)
+   ========================================================================== */
+.camp-mode { --sun: #ffb32b; --sun-soft: #fff3d6; }
+
+.camp-mode .btn { border-radius: 999px; }
+.camp-mode .section-label {
+  clip-path: none;
+  border-radius: 999px;
+  background: var(--sun-soft);
+  color: #a05e00;
+}
+.camp-mode .section-label::before { background: var(--sun); }
+.camp-mode .divider { transform: none; border-radius: 4px; }
+.camp-mode .card, .camp-mode .camp-card, .camp-mode .feature-box,
+.camp-mode .schedule-card, .camp-mode .info-card, .camp-mode .age-card {
+  border-radius: 22px;
+}
+.camp-mode .photo-stack .photo-main { border-radius: 22px; }
+.camp-mode .photo-stack .photo-float { border-radius: 16px; }
+.camp-mode .photo-stack .badge-float { border-radius: 18px; }
+.camp-mode .photo-stack .badge-float .ico { border-radius: 14px; background: linear-gradient(135deg, var(--sun), #f09000); }
+.camp-mode .tag, .camp-mode .card-tag { border-radius: 999px; transform: rotate(-2.5deg); }
+.camp-mode .camp-feature i { border-radius: 50%; background: var(--sun-soft); color: #a05e00; }
+.camp-mode .camp-card-header-content .tag { transform: rotate(-2deg); }
+
+/* sticker-tilted cards that straighten when touched */
+.camp-mode .camp-card:nth-child(odd) { transform: rotate(-1.3deg); }
+.camp-mode .camp-card:nth-child(even) { transform: rotate(1.3deg); }
+.camp-mode .camp-card:hover { transform: translateY(-10px) rotate(0deg); }
+.camp-mode .feature-box:nth-child(odd) { transform: rotate(-0.8deg); }
+.camp-mode .feature-box:nth-child(even) { transform: rotate(0.8deg); }
+.camp-mode .feature-box:hover { transform: translateY(-8px) rotate(0deg); }
+
+/* bouncier reveal feel + sunny alternating icon blobs */
+.camp-mode .feature-icon { border-radius: 18px; }
+.camp-mode .feature-box:nth-child(even) .feature-icon {
+  background: linear-gradient(135deg, var(--sun), #f09000);
+  box-shadow: 0 12px 28px rgba(240, 144, 0, 0.32);
+}
+.camp-mode .accordion-icon, .camp-mode .testimonial-avatar { border-radius: 50%; }
+.camp-mode .step-num { border-radius: 16px; }
+.camp-mode .cta-inner {
+  border-radius: 30px;
+  background: linear-gradient(115deg, var(--red-dark) 0%, var(--red) 40%, #f09000 130%);
+}
+.camp-mode .info-card-icon, .camp-mode .social-link,
+.camp-mode .footer-contact-item i, .camp-mode .back-to-top { border-radius: 14px; }
+.camp-mode .form-control { border-radius: 14px; }
+.camp-mode .schedule-card-head .t::before { background: var(--sun); }
+.camp-mode .page-hero h1 span { color: var(--sun); }

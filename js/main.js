@@ -58,6 +58,7 @@ document.documentElement.classList.add('has-js');
     finished = true;
     preloader.classList.add('exit');
     document.body.classList.remove('is-loading');
+    document.dispatchEvent(new CustomEvent('preloader:done'));
     setTimeout(function () {
       if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
     }, 1000);
@@ -104,14 +105,17 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   if (hamburger && mobileMenu) {
+    hamburger.setAttribute('aria-expanded', 'false');
     hamburger.addEventListener('click', function () {
       var isOpen = mobileMenu.classList.contains('open');
       if (isOpen) {
         closeMobile();
+        hamburger.setAttribute('aria-expanded', 'false');
       } else {
         hamburger.classList.add('open');
         mobileMenu.classList.add('open');
         document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
       }
     });
     mobileMenu.querySelectorAll('a').forEach(function (link) {
@@ -191,8 +195,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     go(0, false);
 
-    /* Intro reveal */
-    setTimeout(function () { hero.classList.add('hero-in'); }, 150);
+    /* Intro reveal — wait for the preloader curtains so the headline
+       animation is actually seen on first visit */
+    var playIntro = function () {
+      setTimeout(function () { hero.classList.add('hero-in'); }, 250);
+    };
+    if (document.body.classList.contains('is-loading')) {
+      document.addEventListener('preloader:done', playIntro, { once: true });
+    } else {
+      setTimeout(playIntro, 100);
+    }
   })();
 
   /* Interior page heroes get a simple in-class too */
@@ -327,7 +339,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (lightbox && galleryItems.length) {
     galleryItems.forEach(function (item, i) {
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'Open photo ' + (i + 1) + ' in lightbox');
       item.addEventListener('click', function () { openLightbox(i); });
+      item.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
+      });
     });
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
@@ -351,7 +369,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- Accordion ---------- */
   document.querySelectorAll('.accordion-header').forEach(function (header) {
-    header.addEventListener('click', function () {
+    header.setAttribute('tabindex', '0');
+    header.setAttribute('role', 'button');
+    header.setAttribute('aria-expanded', 'false');
+
+    var toggle = function () {
       var item = header.closest('.accordion-item');
       var body = item.querySelector('.accordion-body');
       var isOpen = item.classList.contains('open');
@@ -359,12 +381,19 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.accordion-item.open').forEach(function (openItem) {
         openItem.classList.remove('open');
         openItem.querySelector('.accordion-body').style.maxHeight = null;
+        openItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
       });
 
       if (!isOpen) {
         item.classList.add('open');
         body.style.maxHeight = body.scrollHeight + 'px';
+        header.setAttribute('aria-expanded', 'true');
       }
+    };
+
+    header.addEventListener('click', toggle);
+    header.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
     });
   });
 
