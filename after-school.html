@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>After School Program | Chung's Taekwondo & Martial Arts</title>
   <meta name="description" content="After school Taekwondo program with shuttle pick-up from Richmond Hill schools. JK to Grade 8. Flexible 2-5 day enrollment." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -21,13 +24,13 @@
     <a href="index.html" class="nav-logo">
       <img src="images/logo.png" alt="Chung's Taekwondo Logo" />
       <div class="nav-logo-text">
-        <span class="name">Chung's Taekwondo</span>
-        <span class="sub">&amp; Martial Arts &bull; Richmond Hill</span>
+        <span class="name">Chung's <em>Taekwondo</em></span>
+        <span class="sub">Martial Arts &bull; Richmond Hill</span>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="taekwondo-class.html">Taekwondo Class</a></li>
+      <li><a href="taekwondo-class.html">Classes</a></li>
       <li><a href="after-school.html" class="active">After School</a></li>
       <li><a href="camp.html">Camp</a></li>
       <li><a href="schedule.html">Schedule</a></li>
@@ -43,7 +46,7 @@
 
 <div class="mobile-menu">
   <a href="index.html">Home</a>
-  <a href="taekwondo-class.html">Taekwondo Class</a>
+  <a href="taekwondo-class.html">Taekwondo Classes</a>
   <a href="after-school.html">After School Program</a>
   <a href="camp.html">Camp</a>
   <a href="schedule.html">Schedule</a>
@@ -51,17 +54,16 @@
   <a href="contact.html">Contact</a>
   <a href="contact.html" class="btn btn-primary">Free Trial Class</a>
 </div>
-<div class="overlay"></div>
 
 <!-- Page Hero -->
 <div class="page-hero">
   <div class="page-hero-bg" style="background-image:url('images/afterschool-banner.jpg');"></div>
   <div class="page-hero-overlay"></div>
   <div class="container">
-    <div class="page-hero-content fade-up">
+    <div class="page-hero-content">
       <div class="breadcrumb">
         <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i>
+        <i class="fa-solid fa-chevron-right"></i>
         <span>After School Program</span>
       </div>
       <h1>After School <span>Program</span></h1>
@@ -70,23 +72,37 @@
 </div>
 
 <!-- Intro -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:center; gap:80px;">
-      <div class="fade-up">
+      <div data-reveal="left">
         <div class="section-label">Convenient &amp; Comprehensive</div>
-        <h2 class="section-title">After School Program With Pick-up Shuttle from School</h2>
+        <h2 class="section-title">We Pick Them Up. They Come Home Happy.</h2>
         <div class="divider"></div>
-        <p style="color:var(--gray-light); font-size:0.95rem; line-height:1.8; margin-bottom:16px;">We understand how busy life gets for parents. That's why our After School Program includes a shuttle pick-up service from most Richmond Hill public, Catholic, and private elementary schools — taking one more thing off your plate.</p>
-        <p style="color:var(--gray-light); font-size:0.95rem; line-height:1.8; margin-bottom:24px;">Once at the academy, your child will receive the same quality Taekwondo instruction as our evening classes, with the added bonus of homework time and supervised free play before you pick them up. It's the perfect all-in-one after school solution.</p>
-        <div class="tag" style="margin-bottom:24px;"><i class="fa-solid fa-graduation-cap"></i> JK through Grade 8</div>
-        <a href="contact.html" class="btn btn-primary">
-          <i class="fa-solid fa-bus"></i> Enquire About Pick-Up
-        </a>
+        <p style="font-size:0.98rem; line-height:1.8; margin-bottom:16px;">We understand how busy life gets for parents. That's why our After School Program includes a shuttle pick-up service from most Richmond Hill public, Catholic, and private elementary schools &mdash; taking one more thing off your plate.</p>
+        <p style="font-size:0.98rem; line-height:1.8; margin-bottom:24px;">Once at the academy, your child receives the same quality Taekwondo instruction as our evening classes, with the added bonus of homework time and supervised free play before you pick them up. It's the perfect all-in-one after school solution.</p>
+        <div class="tag" style="margin-bottom:28px;"><i class="fa-solid fa-graduation-cap"></i> JK through Grade 8</div>
+        <div>
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fa-solid fa-bus"></i> Enquire About Pick-Up
+          </a>
+        </div>
       </div>
-      <div class="fade-up fade-up-delay-2">
-        <div style="position:relative; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-lg);">
-          <img src="images/program1.jpg" alt="After school Taekwondo" style="width:100%; height:460px; object-fit:cover;" />
+      <div data-reveal="right">
+        <div class="photo-stack">
+          <div class="photo-main">
+            <img src="images/afterschool-banner.jpg" alt="After school Taekwondo students" data-parallax="24" loading="lazy" />
+          </div>
+          <div class="photo-float">
+            <img src="images/program1.jpg" alt="Kids training in class" loading="lazy" />
+          </div>
+          <div class="badge-float">
+            <div class="ico"><i class="fa-solid fa-bus"></i></div>
+            <div>
+              <div class="t1">Safe Shuttle</div>
+              <div class="t2">Text on arrival</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -94,14 +110,15 @@
 </section>
 
 <!-- How It Works -->
-<section class="section">
+<section class="section section-alt">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>How It Works<span></span></div>
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">How It Works</div>
       <h2 class="section-title">A Seamless After School Routine</h2>
+      <div class="divider center"></div>
     </div>
     <div class="grid-2" style="gap:64px; align-items:start;">
-      <div class="steps fade-up">
+      <div class="steps" data-reveal="left">
         <div class="step">
           <div class="step-num">01</div>
           <div class="step-content">
@@ -131,7 +148,7 @@
           </div>
         </div>
       </div>
-      <div class="fade-up fade-up-delay-2">
+      <div data-reveal="right">
         <div class="section-label">Key Benefits</div>
         <h3 class="section-title" style="font-size:1.8rem;">Everything Your Child Needs</h3>
         <div class="divider"></div>
@@ -153,49 +170,48 @@
 </section>
 
 <!-- Enrollment Options -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>Flexible Scheduling<span></span></div>
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">Flexible Scheduling</div>
       <h2 class="section-title">Enrolment Options to Fit Your Schedule</h2>
-      <p class="section-subtitle" style="margin:0 auto;">We offer flexible enrolment from 2 to 5 days a week. After School members also gain access to all evening and weekend classes at no additional charge.</p>
+      <div class="divider center"></div>
+      <p class="section-subtitle">Choose 2 to 5 days a week. After School members also gain access to all evening and weekend classes at no additional charge.</p>
     </div>
-    <div class="grid-3">
-      <div class="feature-box fade-up fade-up-delay-1">
+    <div class="grid-3" data-reveal-group>
+      <div class="feature-box">
         <div class="feature-icon"><i class="fa-solid fa-calendar-days"></i></div>
         <h3>2 Days / Week</h3>
         <p>Perfect for families with packed schedules. Two days per week still provides meaningful Taekwondo development and a consistent after school routine.</p>
       </div>
-      <div class="feature-box fade-up fade-up-delay-2">
+      <div class="feature-box">
         <div class="feature-icon"><i class="fa-solid fa-calendar-week"></i></div>
         <h3>3&ndash;4 Days / Week</h3>
         <p>The most popular option. Balances Taekwondo progress with other extracurricular activities, giving students regular training without overcommitting.</p>
       </div>
-      <div class="feature-box fade-up fade-up-delay-3">
+      <div class="feature-box">
         <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
         <h3>5 Days / Week</h3>
-        <p>For the dedicated martial artist. Full week enrolment maximizes Taekwondo progression and gives parents the most comprehensive childcare coverage.</p>
+        <p>For the dedicated martial artist. Full week enrolment maximizes Taekwondo progression and gives parents the most comprehensive coverage.</p>
       </div>
     </div>
-    <div class="text-center" style="margin-top:48px;">
-      <p style="color:var(--gray-light); margin-bottom:24px;">Not sure which option is right for your family? We're happy to help you choose.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Contact Us to Discuss</a>
+    <div class="text-center" data-reveal style="margin-top:48px;">
+      <p style="margin-bottom:24px;">Not sure which option is right for your family? We're happy to help you choose.</p>
+      <a href="contact.html" class="btn btn-blue btn-lg"><i class="fa-solid fa-phone"></i> Contact Us to Discuss</a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <div class="cta-banner">
-  <div class="container">
-    <div class="cta-inner">
-      <div class="cta-text">
-        <h2>Book a Free Trial Class!</h2>
-        <p>See why families across Richmond Hill trust Chung's Taekwondo for their after school program. Contact us today to arrange a free trial.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold btn-lg"><i class="fa-solid fa-calendar-check"></i> Contact Us</a>
-        <a href="tel:9052375232" class="btn btn-outline btn-lg"><i class="fa-solid fa-phone"></i> 905-237-5232</a>
-      </div>
+  <div class="cta-inner" data-reveal="zoom">
+    <div class="cta-text">
+      <h2>Book a Free Trial Class!</h2>
+      <p>See why families across Richmond Hill trust Chung's Taekwondo for their after school program. Contact us today to arrange a free trial.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-white btn-lg"><i class="fa-solid fa-calendar-check"></i> Contact Us</a>
+      <a href="tel:9052375232" class="btn btn-outline btn-lg"><i class="fa-solid fa-phone"></i> 905-237-5232</a>
     </div>
   </div>
 </div>
@@ -216,24 +232,24 @@
       <div>
         <div class="footer-heading">Quick Links</div>
         <ul class="footer-links">
-          <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Home</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Taekwondo Class</a></li>
-          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> After School</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Camp</a></li>
-          <li><a href="schedule.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Schedule</a></li>
-          <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> About Us</a></li>
-          <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
+          <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Taekwondo Classes</a></li>
+          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right"></i> After School Program</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> Camp</a></li>
+          <li><a href="schedule.html"><i class="fa-solid fa-chevron-right"></i> Schedule</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-heading">Programs</div>
         <ul class="footer-links">
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Tots Class (4&ndash;6)</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Junior Class (7&ndash;12)</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Teen &amp; Adult (13+)</a></li>
-          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> After School Shuttle</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Summer Camp</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> March Break Camp</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Tots Class (4&ndash;6)</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Junior Class (7&ndash;12)</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Teen &amp; Adult (13+)</a></li>
+          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right"></i> After School Shuttle</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> Summer Camp</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> March Break Camp</a></li>
         </ul>
       </div>
       <div>
@@ -252,6 +268,9 @@
 </footer>
 
 <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

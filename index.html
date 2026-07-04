@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chung's Taekwondo & Martial Arts | Richmond Hill, ON</title>
-  <meta name="description" content="Chung's Taekwondo Academy in Richmond Hill, Ontario. High-quality martial arts instruction for kids, teens, and adults since 2009. Free trial class available." />
+  <title>Chung's Taekwondo & Martial Arts | Kids Martial Arts in Richmond Hill, ON</title>
+  <meta name="description" content="Chung's Taekwondo Academy in Richmond Hill, Ontario. Confidence-building martial arts for kids, teens, and adults since 2009. After school shuttle, camps, and a free 2-week trial." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="images/hero.jpg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -23,13 +27,13 @@
     <a href="index.html" class="nav-logo">
       <img src="images/logo.png" alt="Chung's Taekwondo Logo" />
       <div class="nav-logo-text">
-        <span class="name">Chung's Taekwondo</span>
-        <span class="sub">&amp; Martial Arts &bull; Richmond Hill</span>
+        <span class="name">Chung's <em>Taekwondo</em></span>
+        <span class="sub">Martial Arts &bull; Richmond Hill</span>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="taekwondo-class.html">Taekwondo Class</a></li>
+      <li><a href="taekwondo-class.html">Classes</a></li>
       <li><a href="after-school.html">After School</a></li>
       <li><a href="camp.html">Camp</a></li>
       <li><a href="schedule.html">Schedule</a></li>
@@ -48,7 +52,7 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu">
   <a href="index.html">Home</a>
-  <a href="taekwondo-class.html">Taekwondo Class</a>
+  <a href="taekwondo-class.html">Taekwondo Classes</a>
   <a href="after-school.html">After School Program</a>
   <a href="camp.html">Camp</a>
   <a href="schedule.html">Schedule</a>
@@ -56,61 +60,92 @@
   <a href="contact.html">Contact</a>
   <a href="contact.html" class="btn btn-primary">Free Trial Class</a>
 </div>
-<div class="overlay"></div>
 
-<!-- Hero -->
+<!-- Hero — cinematic slideshow -->
 <section class="hero">
-  <div class="hero-bg" style="background-image: url('images/hero.jpg');"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-cinema">
+    <div class="cinema-slide" data-src="images/hero.jpg" style="background-image:url('images/hero.jpg');"></div>
+    <div class="cinema-slide" data-src="images/program1.jpg"></div>
+    <div class="cinema-slide" data-src="images/camp.jpg"></div>
+    <div class="cinema-slide" data-src="images/master.jpg"></div>
+  </div>
+  <div class="hero-veil"></div>
+  <div class="hero-tint"></div>
+  <div class="hero-grain"></div>
+
   <div class="container">
     <div class="hero-content">
       <div class="hero-badge">
         <span class="dot"></span>
         Now Enrolling &mdash; Spring 2026
       </div>
-      <h1>Chung's<span>Taekwondo</span></h1>
-      <p class="hero-year">Keeping Kids, Teens &amp; Adults Active Since 2009</p>
-      <p>Richmond Hill's premier martial arts academy, offering world-class Taekwondo instruction in a supportive, disciplined, and energetic environment for all ages and skill levels.</p>
+      <p class="hero-kicker">Chung's Taekwondo &amp; Martial Arts &bull; Richmond Hill</p>
+      <h1>
+        <span class="line"><span class="word accent-red">Kick-Start</span> <span class="word w2">Your</span></span>
+        <span class="line"><span class="word w2">Child's</span> <span class="word w3 accent-blue">Confidence</span></span>
+      </h1>
+      <p class="hero-lede">Fun, high-energy Taekwondo for kids from age 4 &mdash; plus teens and adults. Certified Korean masters, an after-school shuttle from Richmond Hill schools, and a community your family will love. First two weeks are on us.</p>
       <div class="hero-btns">
         <a href="contact.html" class="btn btn-primary btn-lg">
-          <i class="fa-solid fa-calendar-check"></i> Book Free Trial
+          <i class="fa-solid fa-calendar-check"></i> Book a Free Trial
         </a>
         <a href="taekwondo-class.html" class="btn btn-outline btn-lg">
-          <i class="fa-solid fa-play"></i> Our Programs
+          <i class="fa-solid fa-shoe-prints"></i> Explore Programs
         </a>
       </div>
     </div>
   </div>
+
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="num" data-target="17" data-suffix="+">0+</div>
-      <div class="label">Years Active</div>
+      <div class="ico"><i class="fa-solid fa-medal"></i></div>
+      <div>
+        <div class="num">17+</div>
+        <div class="label">Years in Richmond Hill</div>
+      </div>
     </div>
     <div class="hero-stat">
-      <div class="num" data-target="3" data-suffix="">0</div>
-      <div class="label">Programs</div>
+      <div class="ico"><i class="fa-solid fa-user-ninja"></i></div>
+      <div>
+        <div class="num">7th Dan</div>
+        <div class="label">Master Chung's Rank</div>
+      </div>
     </div>
     <div class="hero-stat">
-      <div class="num" data-target="7" data-suffix="th Dan">0</div>
-      <div class="label">Master's Rank</div>
+      <div class="ico"><i class="fa-solid fa-bus"></i></div>
+      <div>
+        <div class="num">School</div>
+        <div class="label">Pick-Up Shuttle</div>
+      </div>
     </div>
   </div>
+
+  <div class="hero-dots" aria-label="Hero slideshow controls"></div>
+
   <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
+    <div class="mouse"><span></span></div>
+    Scroll
   </div>
 </section>
 
-<!-- Welcome / Intro -->
-<section class="section section-alt">
+<!-- Marquee value strip -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">Confidence <i class="fa-solid fa-star"></i> Discipline <i class="fa-solid fa-star"></i> Respect <i class="fa-solid fa-star"></i> Focus <i class="fa-solid fa-star"></i> Friendship <i class="fa-solid fa-star"></i> Fun <i class="fa-solid fa-star"></i></div>
+    <div class="marquee-item">Confidence <i class="fa-solid fa-star"></i> Discipline <i class="fa-solid fa-star"></i> Respect <i class="fa-solid fa-star"></i> Focus <i class="fa-solid fa-star"></i> Friendship <i class="fa-solid fa-star"></i> Fun <i class="fa-solid fa-star"></i></div>
+  </div>
+</div>
+
+<!-- Welcome -->
+<section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:center; gap:80px;">
-      <div class="fade-up">
+      <div data-reveal="left">
         <div class="section-label">Welcome to Our Academy</div>
-        <h2 class="section-title">Building Champions in Richmond Hill Since 2009</h2>
+        <h2 class="section-title">Building Happy, Confident Kids Since 2009</h2>
         <div class="divider"></div>
-        <p class="section-subtitle" style="max-width:none;">At Chung's Taekwondo Richmond Hill, we offer a variety of programs designed to meet the needs of our entire community. Located at 9625 Yonge Street Unit A, our academy provides high-quality martial arts instruction to kids, teens, and adults. With over 17 years of experience, we have become a cornerstone in promoting fitness, discipline, and camaraderie right here in Richmond Hill.</p>
-        <p style="color:var(--gray-light); font-size:0.95rem; line-height:1.8; margin-top:16px;">Come and experience the difference at Chung's Taekwondo Richmond Hill — where every student is part of a thriving, supportive community and every belt earned is a milestone celebrated.</p>
+        <p class="section-subtitle" style="max-width:none;">At Chung's Taekwondo Richmond Hill, we help children grow stronger, braver, and more focused &mdash; one belt at a time. Located at 9625 Yonge Street, our academy has been a cornerstone of the community for over 17 years, welcoming kids, teens, and adults of every skill level.</p>
+        <p style="font-size:0.98rem; line-height:1.8; margin-top:16px;">Every class blends real martial arts instruction with games, encouragement, and celebration &mdash; because kids learn best when they're having fun. Come experience the difference, where every student is family and every belt earned is a milestone celebrated together.</p>
         <div class="credential-badges" style="margin-top:28px;">
           <div class="credential-badge">
             <i class="fa-solid fa-shield-halved"></i>
@@ -125,16 +160,24 @@
             <span>Kukkiwon Certified</span>
           </div>
         </div>
-        <a href="about.html" class="btn btn-primary" style="margin-top:32px;">
+        <a href="about.html" class="btn btn-blue" style="margin-top:32px;">
           <i class="fa-solid fa-arrow-right"></i> Learn About Us
         </a>
       </div>
-      <div class="fade-up fade-up-delay-2">
-        <div style="position:relative; border-radius:12px; overflow:hidden; box-shadow: var(--shadow-lg);">
-          <img src="images/master-katana.jpg" alt="Master Chung" style="width:100%; height:500px; object-fit:cover; object-position:center top;" />
-          <div style="position:absolute; bottom:24px; left:24px; background:rgba(8,8,8,0.9); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:16px 20px; backdrop-filter:blur(8px);">
-            <div style="font-family:var(--font-heading); font-size:1rem; font-weight:700; color:var(--white);">Master Chung</div>
-            <div style="font-size:0.78rem; color:var(--gray); margin-top:2px;">7th Dan Black Belt &bull; Head Master</div>
+      <div data-reveal="right">
+        <div class="photo-stack">
+          <div class="photo-main">
+            <img src="images/program2.jpg" alt="Students training at Chung's Taekwondo" data-parallax="24" loading="lazy" />
+          </div>
+          <div class="photo-float">
+            <img src="images/gallery2.jpg" alt="Camp adventure at Tree Top Trekking" loading="lazy" />
+          </div>
+          <div class="badge-float">
+            <div class="ico"><i class="fa-solid fa-heart"></i></div>
+            <div>
+              <div class="t1">17+ Years</div>
+              <div class="t2">Trusted by families</div>
+            </div>
           </div>
         </div>
       </div>
@@ -143,47 +186,45 @@
 </section>
 
 <!-- Programs -->
-<section class="section">
+<section class="section section-alt">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>Our Programs<span></span></div>
-      <h2 class="section-title">Martial Arts for Every Stage of Life</h2>
-      <p class="section-subtitle" style="margin:0 auto;">From our youngest students to seasoned adults, we offer structured, engaging programs tailored to your goals.</p>
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">Our Programs</div>
+      <h2 class="section-title">A Perfect Fit for Every Kid (and Grown-Up)</h2>
+      <div class="divider center"></div>
+      <p class="section-subtitle">From tiny tigers to teens and parents, our structured programs are tailored to every age, energy level, and goal.</p>
     </div>
-    <div class="grid-3">
-      <div class="card fade-up fade-up-delay-1">
+    <div class="grid-3" data-reveal-group>
+      <div class="card">
         <div class="card-img">
-          <img src="images/program1.jpg" alt="Taekwondo Classes" />
-          <div class="card-img-overlay"></div>
+          <span class="card-tag">Ages 4+</span>
+          <img src="images/program1.jpg" alt="Kids Taekwondo class" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="card-tag">Ages 4+</span>
           <h3 class="card-title">Taekwondo Classes</h3>
-          <p class="card-text">Dynamic classes for Tots (4–6), Juniors (7–12), and Teens/Adults (13+). Our structured curriculum builds confidence, strength, and discipline through kicking, self-defence, patterns, and more.</p>
+          <p class="card-text">Dynamic classes for Tots (4&ndash;6), Juniors (7&ndash;12), and Teens &amp; Adults (13+). A structured curriculum that builds confidence, strength, and discipline through kicking, self-defence, and patterns.</p>
           <a href="taekwondo-class.html" class="card-link">Explore Classes <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-      <div class="card fade-up fade-up-delay-2">
+      <div class="card">
         <div class="card-img">
-          <img src="images/program2.jpg" alt="After School Program" />
-          <div class="card-img-overlay"></div>
+          <span class="card-tag">JK &ndash; Grade 8</span>
+          <img src="images/afterschool-banner.jpg" alt="After school program students" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="card-tag">JK &ndash; Grade 8</span>
           <h3 class="card-title">After School Program</h3>
-          <p class="card-text">Our popular shuttle pick-up service brings students directly from most Richmond Hill schools to our academy. Taekwondo training, homework time, and free play &mdash; all in one convenient program.</p>
+          <p class="card-text">Our shuttle picks students up right from most Richmond Hill schools. Taekwondo training, homework time, and supervised free play &mdash; the all-in-one after school solution parents love.</p>
           <a href="after-school.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-      <div class="card fade-up fade-up-delay-3">
+      <div class="card">
         <div class="card-img">
-          <img src="images/camp.jpg" alt="Camp Programs" />
-          <div class="card-img-overlay"></div>
+          <span class="card-tag">Ages 5&ndash;12</span>
+          <img src="images/camp.jpg" alt="Kids having fun at camp" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="card-tag">Ages 5–12</span>
           <h3 class="card-title">Camp Programs</h3>
-          <p class="card-text">Summer, March Break, and PA Day camps packed with Taekwondo training, games, crafts, and exciting field trips — including visits to the Toronto Zoo and Tree Top Trekking.</p>
+          <p class="card-text">Summer, March Break, and PA Day camps packed with Taekwondo, games, crafts, and unforgettable field trips &mdash; the Toronto Zoo, Tree Top Trekking, and more.</p>
           <a href="camp.html" class="card-link">View Camps <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
@@ -191,88 +232,89 @@
   </div>
 </section>
 
-<!-- Master Chung Spotlight -->
-<section class="section section-dark-3">
-  <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:48px;">
-      <div class="section-label" style="justify-content:center;"><span></span>Head Master<span></span></div>
-      <h2 class="section-title">Meet Master Chung</h2>
-    </div>
-    <div class="master-spotlight fade-up">
-      <div class="master-spotlight-img">
-        <img src="images/master-katana.jpg" alt="Master Chung — 7th Dan Black Belt" />
+<!-- Stat band -->
+<section class="section" style="padding-top:0;">
+  <div class="container" style="margin-top:104px;">
+    <div class="stat-band" data-reveal="zoom">
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-num" data-target="17" data-suffix="+">0</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="7" data-suffix="th Dan">0</div>
+          <div class="stat-label">Master Chung's Rank</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="4" data-suffix="th Dan+">0</div>
+          <div class="stat-label">Minimum Instructor Rank</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="3" data-suffix=" Camps">0</div>
+          <div class="stat-label">Seasons of Camp Fun</div>
+        </div>
       </div>
-      <div class="master-spotlight-content">
-        <div class="master-name">Master Chung</div>
-        <div class="master-title">Head Master &amp; Academy Owner</div>
-        <p class="master-bio">Born in Daegu, South Korea into a lineage of Taekwondo Masters, Master Chung has dedicated his life to the martial arts. With over 20 years of teaching experience and active training across Taekwondo, Kendo, and Boxing, he brings a depth of knowledge and passion to every class he leads.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Parents Choose Us -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">Why Parents Choose Us</div>
+      <h2 class="section-title">The Chung's Difference</h2>
+      <div class="divider center"></div>
+      <p class="section-subtitle">We go beyond kicks and punches &mdash; we build character, confidence, and community your whole family can feel good about.</p>
+    </div>
+    <div class="grid-4" data-reveal-group>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-medal"></i></div>
+        <h3>Certified Masters</h3>
+        <p>Every instructor holds at least a 4th Degree Black Belt with Kukkiwon certification from South Korea.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-bus"></i></div>
+        <h3>School Shuttle</h3>
+        <p>Branded, commercially-insured vehicles pick your child up from school &mdash; with a text the moment they arrive safely.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-child-reaching"></i></div>
+        <h3>Kid-First Coaching</h3>
+        <p>Age-tailored classes from Tots (4&ndash;6) up &mdash; positive, patient teaching that turns energy into focus.</p>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+        <h3>World-Recognized Belts</h3>
+        <p>Affiliated with Taekwondo Ontario and World Taekwondo &mdash; every Black Belt earned here is recognized globally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Master Chung Spotlight -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="master-spotlight">
+      <div class="master-spotlight-img" data-reveal="left">
+        <div class="frame">
+          <img src="images/master-katana.jpg" alt="Master Chung — 7th Dan Black Belt" loading="lazy" />
+        </div>
+      </div>
+      <div data-reveal="right">
+        <div class="section-label">Head Master</div>
+        <div class="master-name">Meet Master Chung</div>
+        <div class="master-title">7th Dan Black Belt &bull; Academy Owner</div>
+        <p class="master-bio">Born in Daegu, South Korea into a lineage of Taekwondo Masters, Master Chung has dedicated his life to the martial arts. With over 20 years of teaching experience and active training across Taekwondo, Kendo, and Boxing, he brings world-class knowledge &mdash; and genuine warmth &mdash; to every class he leads.</p>
         <div class="master-tags">
           <span class="master-tag"><i class="fa-solid fa-award"></i> 7th Dan Black Belt</span>
           <span class="master-tag"><i class="fa-solid fa-globe"></i> WTF Certified Instructor</span>
-          <span class="master-tag"><i class="fa-solid fa-sword"></i> Kendo Practitioner</span>
           <span class="master-tag"><i class="fa-solid fa-graduation-cap"></i> Ministry of Sports, Korea</span>
           <span class="master-tag"><i class="fa-solid fa-clock"></i> 20+ Years Teaching</span>
         </div>
-        <a href="about.html" class="btn btn-outline" style="margin-top:28px; align-self:flex-start;">
-          <i class="fa-solid fa-arrow-right"></i> Full Bio
+        <a href="about.html" class="btn btn-outline" style="margin-top:30px;">
+          <i class="fa-solid fa-arrow-right"></i> Read Full Bio
         </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stats -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="stat-grid fade-up">
-      <div class="stat-item">
-        <div class="stat-num" data-target="17" data-suffix="+">0+</div>
-        <div class="stat-label">Years of Excellence</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-target="4" data-suffix="th Dan+">0</div>
-        <div class="stat-label">Minimum Instructor Rank</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-target="3" data-suffix="">0</div>
-        <div class="stat-label">Camp Programs</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-target="7" data-suffix="th Dan">0</div>
-        <div class="stat-label">Master Chung's Rank</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why Choose Us -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>Why Train With Us<span></span></div>
-      <h2 class="section-title">The Chung's Difference</h2>
-      <p class="section-subtitle" style="margin:0 auto;">We go beyond kicks and punches &mdash; we build character, confidence, and community.</p>
-    </div>
-    <div class="grid-4">
-      <div class="feature-box fade-up fade-up-delay-1">
-        <div class="feature-icon"><i class="fa-solid fa-medal"></i></div>
-        <h3>Certified Instructors</h3>
-        <p>All instructors hold at least a 4th Degree Black Belt with Kukkiwon certification from South Korea.</p>
-      </div>
-      <div class="feature-box fade-up fade-up-delay-2">
-        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
-        <h3>All Ages Welcome</h3>
-        <p>Programs tailored for every stage &mdash; from Tots ages 4&ndash;6 to adult martial artists looking to push their limits.</p>
-      </div>
-      <div class="feature-box fade-up fade-up-delay-3">
-        <div class="feature-icon"><i class="fa-solid fa-bus"></i></div>
-        <h3>School Shuttle Service</h3>
-        <p>Our branded, commercially-insured vehicles pick up students directly from Richmond Hill schools.</p>
-      </div>
-      <div class="feature-box fade-up fade-up-delay-4">
-        <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
-        <h3>World-Recognized</h3>
-        <p>Affiliated with Taekwondo Ontario and the World Taekwondo Federation &mdash; your Black Belt is recognized globally.</p>
       </div>
     </div>
   </div>
@@ -281,12 +323,13 @@
 <!-- Testimonials -->
 <section class="section">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>What Parents Say<span></span></div>
-      <h2 class="section-title">Heard From Our Community</h2>
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">What Parents Say</div>
+      <h2 class="section-title">Loved by Richmond Hill Families</h2>
+      <div class="divider center"></div>
     </div>
-    <div class="grid-3">
-      <div class="testimonial-card fade-up fade-up-delay-1">
+    <div class="grid-3" data-reveal-group>
+      <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
@@ -295,11 +338,11 @@
           <div class="testimonial-avatar">Z</div>
           <div>
             <div class="testimonial-name">Z.M</div>
-            <div class="testimonial-source">Google Review &bull; 2022</div>
+            <div class="testimonial-source">Google Review &bull; Parent</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card fade-up fade-up-delay-2">
+      <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
@@ -308,11 +351,11 @@
           <div class="testimonial-avatar">A</div>
           <div>
             <div class="testimonial-name">A.K</div>
-            <div class="testimonial-source">Google Review</div>
+            <div class="testimonial-source">Google Review &bull; Parent</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card fade-up fade-up-delay-3">
+      <div class="testimonial-card">
         <div class="stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
@@ -321,7 +364,7 @@
           <div class="testimonial-avatar">M</div>
           <div>
             <div class="testimonial-name">M.L</div>
-            <div class="testimonial-source">Google Review</div>
+            <div class="testimonial-source">Google Review &bull; Parent</div>
           </div>
         </div>
       </div>
@@ -330,32 +373,37 @@
 </section>
 
 <!-- Gallery -->
-<section class="section section-dark-3">
+<section class="section section-alt">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:48px;">
-      <div class="section-label" style="justify-content:center;"><span></span>Life at the Academy<span></span></div>
+    <div class="text-center" data-reveal style="margin-bottom:48px;">
+      <div class="section-label">Life at the Academy</div>
       <h2 class="section-title">Inside Chung's Taekwondo</h2>
-      <p class="section-subtitle" style="margin:0 auto;">A glimpse into the energy, dedication, and community that makes our academy special.</p>
+      <div class="divider center"></div>
+      <p class="section-subtitle">A glimpse into the energy, dedication, and friendships that make our academy special.</p>
     </div>
-    <div class="gallery-grid fade-up">
+    <div class="gallery-grid" data-reveal>
       <div class="gallery-item" data-src="images/gallery1.jpg">
         <img src="images/gallery1.jpg" alt="Chung's Taekwondo Academy" loading="lazy" />
         <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="images/gallery2.jpg">
-        <img src="images/gallery2.jpg" alt="Students training" loading="lazy" />
+        <img src="images/gallery2.jpg" alt="Camp field trip fun" loading="lazy" />
         <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="images/gallery3.jpg">
         <img src="images/gallery3.jpg" alt="Taekwondo class in session" loading="lazy" />
         <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
-      <div class="gallery-item" data-src="images/gallery4.jpg">
-        <img src="images/gallery4.jpg" alt="Belt testing" loading="lazy" />
+      <div class="gallery-item" data-src="images/master.jpg">
+        <img src="images/master.jpg" alt="The whole Chung's Taekwondo family with Master Chung" loading="lazy" />
         <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="gallery-item" data-src="images/afterschool-banner.jpg">
         <img src="images/afterschool-banner.jpg" alt="After school program" loading="lazy" />
+        <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="gallery-item" data-src="images/program1.jpg">
+        <img src="images/program1.jpg" alt="Kids class training on the mats" loading="lazy" />
         <div class="gallery-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
     </div>
@@ -373,21 +421,19 @@
 </div>
 
 <!-- CTA Banner -->
-<div class="cta-banner fade-up">
-  <div class="container">
-    <div class="cta-inner">
-      <div class="cta-text">
-        <h2>Ready to Start Your Journey?</h2>
-        <p>Try your first two weeks of classes completely free &mdash; no commitment required. Join the Chung's Taekwondo family today.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold btn-lg">
-          <i class="fa-solid fa-calendar-check"></i> Book Free Trial
-        </a>
-        <a href="tel:9052375232" class="btn btn-outline btn-lg">
-          <i class="fa-solid fa-phone"></i> 905-237-5232
-        </a>
-      </div>
+<div class="cta-banner">
+  <div class="cta-inner" data-reveal="zoom">
+    <div class="cta-text">
+      <h2>Ready to Watch Them Grow?</h2>
+      <p>Try your first two weeks of classes completely free &mdash; no commitment required. Join the Chung's Taekwondo family today.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-white btn-lg">
+        <i class="fa-solid fa-calendar-check"></i> Book Free Trial
+      </a>
+      <a href="tel:9052375232" class="btn btn-outline btn-lg">
+        <i class="fa-solid fa-phone"></i> 905-237-5232
+      </a>
     </div>
   </div>
 </div>
@@ -408,25 +454,25 @@
       <div>
         <div class="footer-heading">Quick Links</div>
         <ul class="footer-links">
-          <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Home</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Taekwondo Class</a></li>
-          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> After School Program</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Camp</a></li>
-          <li><a href="schedule.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Schedule</a></li>
-          <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> About Us</a></li>
-          <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
+          <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Taekwondo Classes</a></li>
+          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right"></i> After School Program</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> Camp</a></li>
+          <li><a href="schedule.html"><i class="fa-solid fa-chevron-right"></i> Schedule</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-heading">Programs</div>
         <ul class="footer-links">
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Tots Class (4&ndash;6)</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Junior Class (7&ndash;12)</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Teen &amp; Adult (13+)</a></li>
-          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> After School Shuttle</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Summer Camp</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> March Break Camp</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> PA Day Camp</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Tots Class (4&ndash;6)</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Junior Class (7&ndash;12)</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Teen &amp; Adult (13+)</a></li>
+          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right"></i> After School Shuttle</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> Summer Camp</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> March Break Camp</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> PA Day Camp</a></li>
         </ul>
       </div>
       <div>
@@ -460,6 +506,8 @@
   <i class="fa-solid fa-chevron-up"></i>
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

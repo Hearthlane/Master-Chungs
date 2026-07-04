@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taekwondo Classes | Chung's Taekwondo & Martial Arts</title>
   <meta name="description" content="Taekwondo classes for Tots (4-6), Juniors (7-12), and Teens & Adults (13+) in Richmond Hill, ON. Build confidence, discipline, and strength." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -21,13 +24,13 @@
     <a href="index.html" class="nav-logo">
       <img src="images/logo.png" alt="Chung's Taekwondo Logo" />
       <div class="nav-logo-text">
-        <span class="name">Chung's Taekwondo</span>
-        <span class="sub">&amp; Martial Arts &bull; Richmond Hill</span>
+        <span class="name">Chung's <em>Taekwondo</em></span>
+        <span class="sub">Martial Arts &bull; Richmond Hill</span>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="taekwondo-class.html" class="active">Taekwondo Class</a></li>
+      <li><a href="taekwondo-class.html" class="active">Classes</a></li>
       <li><a href="after-school.html">After School</a></li>
       <li><a href="camp.html">Camp</a></li>
       <li><a href="schedule.html">Schedule</a></li>
@@ -43,7 +46,7 @@
 
 <div class="mobile-menu">
   <a href="index.html">Home</a>
-  <a href="taekwondo-class.html">Taekwondo Class</a>
+  <a href="taekwondo-class.html">Taekwondo Classes</a>
   <a href="after-school.html">After School Program</a>
   <a href="camp.html">Camp</a>
   <a href="schedule.html">Schedule</a>
@@ -51,18 +54,17 @@
   <a href="contact.html">Contact</a>
   <a href="contact.html" class="btn btn-primary">Free Trial Class</a>
 </div>
-<div class="overlay"></div>
 
 <!-- Page Hero -->
 <div class="page-hero">
   <div class="page-hero-bg" style="background-image:url('images/program1.jpg');"></div>
   <div class="page-hero-overlay"></div>
   <div class="container">
-    <div class="page-hero-content fade-up">
+    <div class="page-hero-content">
       <div class="breadcrumb">
         <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i>
-        <span>Taekwondo Class</span>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Taekwondo Classes</span>
       </div>
       <h1>Taekwondo <span>Classes</span></h1>
     </div>
@@ -70,22 +72,31 @@
 </div>
 
 <!-- Intro -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:center; gap:80px;">
-      <div class="fade-up">
+      <div data-reveal="left">
         <div class="section-label">Our Curriculum</div>
-        <h2 class="section-title">Join Chung's Taekwondo: Martial Arts for Adults, Teens &amp; Kids</h2>
+        <h2 class="section-title">Martial Arts for Kids, Teens &amp; Adults</h2>
         <div class="divider"></div>
-        <p style="color:var(--gray-light); font-size:0.95rem; line-height:1.8; margin-bottom:16px;">Our Taekwondo classes are thoughtfully designed to build confidence, strength, and discipline through a structured curriculum that challenges beginners and advanced students alike. High-energy class drills rotate regularly to keep students engaged and progressing.</p>
-        <p style="color:var(--gray-light); font-size:0.95rem; line-height:1.8; margin-bottom:24px;">Students learn the full spectrum of Taekwondo: from powerful kicking and striking techniques to refined patterns (poomsae), self-defence applications, nun chucks, and kendo sword. Every class is a step toward black belt excellence.</p>
+        <p style="font-size:0.98rem; line-height:1.8; margin-bottom:16px;">Our Taekwondo classes are thoughtfully designed to build confidence, strength, and discipline through a structured curriculum that challenges beginners and advanced students alike. High-energy class drills rotate regularly to keep students engaged and progressing.</p>
+        <p style="font-size:0.98rem; line-height:1.8; margin-bottom:24px;">Students learn the full spectrum of Taekwondo: from powerful kicking and striking techniques to refined patterns (poomsae), self-defence applications, nun chucks, and kendo sword. Every class is a step toward black belt excellence.</p>
         <a href="contact.html" class="btn btn-primary">
           <i class="fa-solid fa-calendar-check"></i> Book a Free Trial
         </a>
       </div>
-      <div class="fade-up fade-up-delay-2">
-        <div style="position:relative; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-lg);">
-          <img src="images/program2.jpg" alt="Taekwondo training" style="width:100%; height:460px; object-fit:cover;" />
+      <div data-reveal="right">
+        <div class="photo-stack">
+          <div class="photo-main">
+            <img src="images/program2.jpg" alt="Taekwondo training" data-parallax="24" loading="lazy" />
+          </div>
+          <div class="badge-float">
+            <div class="ico"><i class="fa-solid fa-shoe-prints"></i></div>
+            <div>
+              <div class="t1">All Levels</div>
+              <div class="t2">White to Black Belt</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -93,22 +104,23 @@
 </section>
 
 <!-- Age Groups -->
-<section class="section">
+<section class="section section-alt">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>Class Types<span></span></div>
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">Class Types</div>
       <h2 class="section-title">A Class for Every Age</h2>
-      <p class="section-subtitle" style="margin:0 auto;">We offer dedicated programs for each stage of development, ensuring every student gets the instruction level and pace that is right for them.</p>
+      <div class="divider center"></div>
+      <p class="section-subtitle">Dedicated programs for each stage of development, so every student gets the instruction level and pace that's right for them.</p>
     </div>
-    <div class="grid-3">
-      <div class="age-card fade-up fade-up-delay-1">
+    <div class="grid-3" data-reveal-group>
+      <div class="age-card">
         <div class="age-card-header">
           <i class="fa-solid fa-child"></i>
           <h3>Tots Class</h3>
           <div class="age-range">Ages 4 &ndash; 6</div>
         </div>
         <div class="age-card-body">
-          <p style="color:var(--gray-light); font-size:0.9rem; line-height:1.7; margin-bottom:20px;">Our Tots program introduces the youngest students to the world of martial arts through fun, age-appropriate activities that build motor skills, coordination, listening habits, and respect.</p>
+          <p style="font-size:0.93rem; line-height:1.7; margin-bottom:18px;">Our Tots program introduces the youngest students to martial arts through fun, age-appropriate activities that build motor skills, coordination, listening habits, and respect.</p>
           <div class="skill-list">
             <div class="skill-item"><i class="fa-solid fa-check"></i>Basic kicks and stances</div>
             <div class="skill-item"><i class="fa-solid fa-check"></i>Coordination and balance</div>
@@ -116,17 +128,17 @@
             <div class="skill-item"><i class="fa-solid fa-check"></i>Fun drills and games</div>
             <div class="skill-item"><i class="fa-solid fa-check"></i>Belt progression system</div>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Enrol Now</a>
+          <a href="contact.html" class="btn btn-blue btn-block">Enrol Now</a>
         </div>
       </div>
-      <div class="age-card fade-up fade-up-delay-2">
+      <div class="age-card">
         <div class="age-card-header">
           <i class="fa-solid fa-person-running"></i>
           <h3>Junior Class</h3>
           <div class="age-range">Ages 7 &ndash; 12</div>
         </div>
         <div class="age-card-body">
-          <p style="color:var(--gray-light); font-size:0.9rem; line-height:1.7; margin-bottom:20px;">The Junior program dives deeper into technique, patterns, and controlled sparring. Students develop physical fitness, mental discipline, and genuine camaraderie with fellow classmates.</p>
+          <p style="font-size:0.93rem; line-height:1.7; margin-bottom:18px;">The Junior program dives deeper into technique, patterns, and controlled sparring. Students develop physical fitness, mental discipline, and genuine camaraderie with classmates.</p>
           <div class="skill-list">
             <div class="skill-item"><i class="fa-solid fa-check"></i>Advanced kicking combinations</div>
             <div class="skill-item"><i class="fa-solid fa-check"></i>Taekwondo patterns (poomsae)</div>
@@ -134,17 +146,17 @@
             <div class="skill-item"><i class="fa-solid fa-check"></i>Controlled sparring</div>
             <div class="skill-item"><i class="fa-solid fa-check"></i>Nun chucks introduction</div>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Enrol Now</a>
+          <a href="contact.html" class="btn btn-primary btn-block">Enrol Now</a>
         </div>
       </div>
-      <div class="age-card fade-up fade-up-delay-3">
+      <div class="age-card">
         <div class="age-card-header">
           <i class="fa-solid fa-dumbbell"></i>
           <h3>Teen &amp; Adult Class</h3>
           <div class="age-range">Ages 13 &amp; Up</div>
         </div>
         <div class="age-card-body">
-          <p style="color:var(--gray-light); font-size:0.9rem; line-height:1.7; margin-bottom:20px;">Teens and adults train together in an challenging, high-energy environment. This class balances rigorous physical conditioning with advanced Taekwondo technique and practical self-defence skills.</p>
+          <p style="font-size:0.93rem; line-height:1.7; margin-bottom:18px;">Teens and adults train together in a challenging, high-energy environment that balances rigorous conditioning with advanced Taekwondo technique and practical self-defence.</p>
           <div class="skill-list">
             <div class="skill-item"><i class="fa-solid fa-check"></i>Full Taekwondo curriculum</div>
             <div class="skill-item"><i class="fa-solid fa-check"></i>Kendo sword training</div>
@@ -152,7 +164,7 @@
             <div class="skill-item"><i class="fa-solid fa-check"></i>Sparring and competition prep</div>
             <div class="skill-item"><i class="fa-solid fa-check"></i>Black Belt advancement path</div>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Enrol Now</a>
+          <a href="contact.html" class="btn btn-blue btn-block">Enrol Now</a>
         </div>
       </div>
     </div>
@@ -160,86 +172,95 @@
 </section>
 
 <!-- Curriculum Details -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>What You'll Learn<span></span></div>
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">What You'll Learn</div>
       <h2 class="section-title">A Comprehensive Martial Arts Curriculum</h2>
+      <div class="divider center"></div>
     </div>
-    <div class="grid-4">
-      <div class="feature-box fade-up fade-up-delay-1">
+    <div class="grid-4" data-reveal-group>
+      <div class="feature-box">
         <div class="feature-icon"><i class="fa-solid fa-shoe-prints"></i></div>
         <h3>Kicking &amp; Striking</h3>
         <p>Master the hallmark of Taekwondo &mdash; powerful, precise, and dynamic kicking and striking combinations.</p>
       </div>
-      <div class="feature-box fade-up fade-up-delay-2">
+      <div class="feature-box">
         <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <h3>Self-Defence</h3>
-        <p>Practical self-defence techniques drawn from Taekwondo and other martial disciplines taught by certified experts.</p>
+        <p>Practical self-defence techniques drawn from Taekwondo and other martial disciplines, taught by certified experts.</p>
       </div>
-      <div class="feature-box fade-up fade-up-delay-3">
+      <div class="feature-box">
         <div class="feature-icon"><i class="fa-solid fa-scroll"></i></div>
         <h3>Patterns (Poomsae)</h3>
         <p>Structured forms that develop focus, precision, and a deep understanding of movement and technique.</p>
       </div>
-      <div class="feature-box fade-up fade-up-delay-4">
-        <div class="feature-icon"><i class="fa-solid fa-sword"></i></div>
+      <div class="feature-box">
+        <div class="feature-icon"><i class="fa-solid fa-hand-fist"></i></div>
         <h3>Kendo &amp; Nun Chucks</h3>
-        <p>Expand beyond Taekwondo with Kendo sword discipline and nun chuck training for a well-rounded martial arts education.</p>
+        <p>Expand beyond Taekwondo with Kendo sword discipline and nun chuck training for a well-rounded education.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Belt System -->
-<section class="section">
+<section class="section section-alt">
   <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:56px;">
-      <div class="section-label" style="justify-content:center;"><span></span>Belt System<span></span></div>
+    <div class="text-center" data-reveal style="margin-bottom:56px;">
+      <div class="section-label">Belt System</div>
       <h2 class="section-title">Your Path to Black Belt</h2>
-      <p class="section-subtitle" style="margin:0 auto;">Our structured belt progression motivates students at every level. Each belt is earned through demonstrated skill, discipline, and respect — all certified through Kukkiwon in South Korea.</p>
+      <div class="divider center"></div>
+      <p class="section-subtitle">Our structured belt progression motivates students at every level. Each belt is earned through demonstrated skill, discipline, and respect &mdash; all certified through Kukkiwon in South Korea.</p>
     </div>
-    <div class="belt-progression fade-up">
-      <div class="belt-step" style="background:rgba(255,255,255,0.04);">
-        <div class="belt-step-color" style="background:#ffffff; border:1px solid rgba(255,255,255,0.2);"></div>
+    <div class="belt-progression">
+      <div class="belt-step belt-white">
+        <div class="belt-step-color"></div>
         <div class="belt-step-label">White</div>
+        <div class="belt-step-rank">The Beginning</div>
       </div>
-      <div class="belt-step" style="background:rgba(255,220,0,0.06);">
-        <div class="belt-step-color" style="background:#FFD700;"></div>
+      <div class="belt-step belt-yellow">
+        <div class="belt-step-color"></div>
         <div class="belt-step-label">Yellow</div>
+        <div class="belt-step-rank">First Steps</div>
       </div>
-      <div class="belt-step" style="background:rgba(0,200,0,0.06);">
-        <div class="belt-step-color" style="background:#22aa22;"></div>
+      <div class="belt-step belt-green">
+        <div class="belt-step-color"></div>
         <div class="belt-step-label">Green</div>
+        <div class="belt-step-rank">Growing Skill</div>
       </div>
-      <div class="belt-step" style="background:rgba(0,100,255,0.06);">
-        <div class="belt-step-color" style="background:#3366ff;"></div>
+      <div class="belt-step belt-blue">
+        <div class="belt-step-color"></div>
         <div class="belt-step-label">Blue</div>
+        <div class="belt-step-rank">Reaching Higher</div>
       </div>
-      <div class="belt-step" style="background:rgba(196,30,58,0.08);">
-        <div class="belt-step-color" style="background:var(--primary);"></div>
+      <div class="belt-step belt-red">
+        <div class="belt-step-color"></div>
         <div class="belt-step-label">Red</div>
+        <div class="belt-step-rank">Focus &amp; Power</div>
       </div>
-      <div class="belt-step" style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08);">
-        <div class="belt-step-color" style="background:#111111; border:1px solid rgba(255,255,255,0.2);"></div>
-        <div class="belt-step-label" style="color:var(--gold);">Black</div>
+      <div class="belt-step belt-black">
+        <div class="belt-step-color"></div>
+        <div class="belt-step-label">Black</div>
+        <div class="belt-step-rank">Mastery Begins</div>
       </div>
     </div>
-    <p style="text-align:center; color:var(--gray); font-size:0.85rem; margin-top:24px;">Note: Belt progression includes intermediate levels and may vary by student. Promotion is based on skill demonstration, respect, and readiness.</p>
+    <p style="text-align:center; color:var(--mist); font-size:0.87rem; margin-top:26px;">Belt progression includes intermediate levels and may vary by student. Promotion is based on skill demonstration, respect, and readiness.</p>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section section-alt">
-  <div class="container" style="max-width:800px;">
-    <div class="text-center fade-up" style="margin-bottom:48px;">
-      <div class="section-label" style="justify-content:center;"><span></span>FAQ<span></span></div>
-      <h2 class="section-title">Common Questions</h2>
+<section class="section">
+  <div class="container" style="max-width:840px;">
+    <div class="text-center" data-reveal style="margin-bottom:48px;">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions from Parents</h2>
+      <div class="divider center"></div>
     </div>
-    <div class="fade-up">
+    <div data-reveal>
       <div class="accordion-item">
         <div class="accordion-header">
-          <h3>Do I need any prior experience?</h3>
+          <h3>Does my child need any prior experience?</h3>
           <div class="accordion-icon"><i class="fa-solid fa-plus"></i></div>
         </div>
         <div class="accordion-body">
@@ -248,7 +269,7 @@
       </div>
       <div class="accordion-item">
         <div class="accordion-header">
-          <h3>What should I wear to my first class?</h3>
+          <h3>What should we wear to the first class?</h3>
           <div class="accordion-icon"><i class="fa-solid fa-plus"></i></div>
         </div>
         <div class="accordion-body">
@@ -257,7 +278,7 @@
       </div>
       <div class="accordion-item">
         <div class="accordion-header">
-          <h3>How often should I attend?</h3>
+          <h3>How often should students attend?</h3>
           <div class="accordion-icon"><i class="fa-solid fa-plus"></i></div>
         </div>
         <div class="accordion-body">
@@ -288,16 +309,14 @@
 
 <!-- CTA -->
 <div class="cta-banner">
-  <div class="container">
-    <div class="cta-inner">
-      <div class="cta-text">
-        <h2>Ready to Start Training?</h2>
-        <p>Book your free 2-week trial class today. No experience necessary &mdash; just bring your energy and we'll handle the rest.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold btn-lg"><i class="fa-solid fa-calendar-check"></i> Book Free Trial</a>
-        <a href="schedule.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-calendar"></i> View Schedule</a>
-      </div>
+  <div class="cta-inner" data-reveal="zoom">
+    <div class="cta-text">
+      <h2>Ready to Start Training?</h2>
+      <p>Book your free 2-week trial class today. No experience necessary &mdash; just bring your energy and we'll handle the rest.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-white btn-lg"><i class="fa-solid fa-calendar-check"></i> Book Free Trial</a>
+      <a href="schedule.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-calendar"></i> View Schedule</a>
     </div>
   </div>
 </div>
@@ -318,24 +337,24 @@
       <div>
         <div class="footer-heading">Quick Links</div>
         <ul class="footer-links">
-          <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Home</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Taekwondo Class</a></li>
-          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> After School</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Camp</a></li>
-          <li><a href="schedule.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Schedule</a></li>
-          <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> About Us</a></li>
-          <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
+          <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Taekwondo Classes</a></li>
+          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right"></i> After School Program</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> Camp</a></li>
+          <li><a href="schedule.html"><i class="fa-solid fa-chevron-right"></i> Schedule</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-heading">Programs</div>
         <ul class="footer-links">
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Tots Class (4&ndash;6)</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Junior Class (7&ndash;12)</a></li>
-          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Teen &amp; Adult (13+)</a></li>
-          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> After School Shuttle</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> Summer Camp</a></li>
-          <li><a href="camp.html"><i class="fa-solid fa-chevron-right" style="font-size:0.6rem;"></i> March Break Camp</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Tots Class (4&ndash;6)</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Junior Class (7&ndash;12)</a></li>
+          <li><a href="taekwondo-class.html"><i class="fa-solid fa-chevron-right"></i> Teen &amp; Adult (13+)</a></li>
+          <li><a href="after-school.html"><i class="fa-solid fa-chevron-right"></i> After School Shuttle</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> Summer Camp</a></li>
+          <li><a href="camp.html"><i class="fa-solid fa-chevron-right"></i> March Break Camp</a></li>
         </ul>
       </div>
       <div>
@@ -354,6 +373,9 @@
 </footer>
 
 <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
