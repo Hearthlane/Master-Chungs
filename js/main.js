@@ -48,7 +48,7 @@ document.documentElement.classList.add('has-js');
       '</div>' +
       '<div class="preloader-title">Chung’s <em>Taekwondo</em></div>' +
       '<div class="preloader-belt"><div class="preloader-belt-fill"></div></div>' +
-      '<div class="preloader-sub">White belt to black belt</div>' +
+      '<div class="preloader-sub">Train the mind, body and spirit</div>' +
     '</div>';
   document.body.appendChild(preloader);
 
@@ -138,15 +138,22 @@ document.addEventListener('DOMContentLoaded', function () {
     var DURATION = 8000;
     var kbClasses = ['kb-a', 'kb-b', 'kb-c', 'kb-d'];
 
-    /* Preload slide images, then start */
-    slides.forEach(function (slide) {
+    /* First slide paints immediately; the rest load after the page is
+       idle so they don't compete with above-the-fold content on mobile */
+    var loadSlide = function (slide) {
       var src = slide.getAttribute('data-src');
-      if (src) {
+      if (src && !slide.style.backgroundImage) {
         var img = new Image();
         img.src = src;
         slide.style.backgroundImage = 'url("' + src + '")';
       }
-    });
+    };
+    loadSlide(slides[0]);
+    var loadRest = function () {
+      setTimeout(function () { slides.forEach(loadSlide); }, 1200);
+    };
+    if (document.readyState === 'complete') loadRest();
+    else window.addEventListener('load', loadRest, { once: true });
 
     var dots = [];
     if (dotsWrap && slides.length > 1) {
@@ -302,19 +309,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    /* Belt progression pops in one belt at a time */
+    /* Belt progression pops in one belt at a time (small offset so the
+       waiting cards never sit over the note text below) */
     var beltSteps = document.querySelectorAll('.belt-step');
     if (beltSteps.length) {
       gsap.from(beltSteps, {
-        y: 44,
+        y: 20,
         opacity: 0,
-        scale: 0.92,
-        stagger: 0.1,
-        duration: 0.7,
-        ease: 'back.out(1.6)',
-        scrollTrigger: { trigger: '.belt-progression', start: 'top 82%' }
+        scale: 0.95,
+        stagger: 0.09,
+        duration: 0.6,
+        ease: 'back.out(1.4)',
+        scrollTrigger: { trigger: '.belt-progression', start: 'top 90%' }
       });
     }
+  }
+
+  /* ---------- Review slider: duplicate the track so it loops forever ---------- */
+  var reviewTrack = document.querySelector('.review-track');
+  if (reviewTrack && !reviewTrack.dataset.looped) {
+    reviewTrack.innerHTML += reviewTrack.innerHTML;
+    reviewTrack.dataset.looped = '1';
   }
 
   /* ---------- Gallery lightbox ---------- */

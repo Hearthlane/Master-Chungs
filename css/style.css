@@ -354,6 +354,7 @@ body.is-loading { overflow: hidden; }
   padding: 9px 15px;
   font-size: 0.92rem;
   font-weight: 800;
+  white-space: nowrap; /* never wrap to two lines */
   color: var(--ink);
   border-radius: var(--radius-pill);
   transition: color var(--transition), background var(--transition);
@@ -1495,7 +1496,7 @@ body.is-loading { overflow: hidden; }
    ========================================================================== */
 .page-hero {
   position: relative;
-  min-height: 380px;
+  min-height: 520px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1516,7 +1517,7 @@ body.is-loading { overflow: hidden; }
     radial-gradient(50% 80% at 90% 100%, rgba(206, 32, 54, 0.35), transparent 70%);
 }
 .page-hero .container { position: relative; z-index: 2; width: 100%; }
-.page-hero-content { padding: 80px 0 90px; }
+.page-hero-content { padding: 120px 0 130px; }
 .breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -1991,10 +1992,11 @@ body.is-loading { overflow: hidden; }
 .form-control {
   width: 100%;
   padding: 14px 18px;
+  min-height: 48px;
   border-radius: 14px;
   border: 1.5px solid var(--line);
   background: var(--paper);
-  font-size: 0.95rem;
+  font-size: 1rem; /* ≥16px so iOS Safari doesn't zoom on focus */
   font-weight: 600;
   color: var(--ink);
   transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
@@ -2116,8 +2118,8 @@ textarea.form-control { min-height: 130px; resize: vertical; }
   .nav-links a { padding: 9px 11px; font-size: 0.88rem; }
 }
 
-/* Nav collapses early — the full link row + CTA needs ~1080px to fit */
-@media (max-width: 1080px) {
+/* Nav collapses early — the full 8-link row + CTA needs ~1160px to fit */
+@media (max-width: 1160px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
 }
@@ -2263,6 +2265,125 @@ h3, h4 {
 
 /* Skewed heading kicker accent on section titles that follow a label */
 .section-label + .section-title { position: relative; }
+
+/* ==========================================================================
+   PHOTO FEATURE CARDS — real photos above the icon
+   ========================================================================== */
+.feature-box .fb-photo {
+  margin: -38px -30px 0;
+  height: 165px;
+  overflow: hidden;
+  position: relative;
+}
+.feature-box .fb-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.feature-box:hover .fb-photo img { transform: scale(1.07); }
+.feature-box .fb-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 30, 63, 0.35) 100%);
+}
+.feature-box .fb-photo + .feature-icon {
+  margin-top: -33px;
+  position: relative;
+  z-index: 2;
+  border: 4px solid var(--white);
+  width: 62px;
+  height: 62px;
+  font-size: 1.3rem;
+}
+
+/* ==========================================================================
+   REVIEW SLIDER — endless scrolling wall of Google reviews
+   ========================================================================== */
+.review-slider {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 0 -28px;
+}
+.review-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding-left: 24px;
+  animation: marqueeScroll 70s linear infinite;
+}
+.review-slider:hover .review-track,
+.review-slider:focus-within .review-track { animation-play-state: paused; }
+.review-track .testimonial-card {
+  width: 380px;
+  flex-shrink: 0;
+}
+.review-slider::before,
+.review-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+}
+.review-slider::before { left: 0; background: linear-gradient(90deg, var(--white), transparent); }
+.review-slider::after { right: 0; background: linear-gradient(270deg, var(--white), transparent); }
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  font-weight: 800;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.rating-badge .score { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.02em; }
+.rating-badge i { color: #f7b32b; }
+
+/* ==========================================================================
+   GALLERY CAPTIONS
+   ========================================================================== */
+.gallery-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 3;
+  color: var(--white);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.gallery-item:hover .gallery-caption,
+.gallery-item:focus-visible .gallery-caption { opacity: 1; transform: none; }
+
+/* Belt note sits clear of the belt cards */
+.belt-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--mist);
+  margin-top: 44px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .review-track .testimonial-card { width: 300px; }
+  .review-slider { margin: 0 -20px; }
+  .feature-box .fb-photo { height: 140px; }
+}
 
 /* ==========================================================================
    CAMP MODE — same bold voice, playful kid-friendly shapes
