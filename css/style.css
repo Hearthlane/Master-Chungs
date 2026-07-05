@@ -521,16 +521,16 @@ body.is-loading { overflow: hidden; }
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.6s ease;
+  transition: opacity 1s ease;
   will-change: transform, opacity;
 }
 .hero-cinema .cinema-slide.active { opacity: 1; }
 /* Ken Burns persists on the kb-* class (not .active) so the outgoing
    slide keeps its final transform while it crossfades out */
-.hero-cinema .cinema-slide.kb-a { animation: kbZoomIn 8.4s linear forwards; }
-.hero-cinema .cinema-slide.kb-b { animation: kbPanRight 8.4s linear forwards; }
-.hero-cinema .cinema-slide.kb-c { animation: kbZoomOut 8.4s linear forwards; }
-.hero-cinema .cinema-slide.kb-d { animation: kbPanUp 8.4s linear forwards; }
+.hero-cinema .cinema-slide.kb-a { animation: kbZoomIn 5.4s linear forwards; }
+.hero-cinema .cinema-slide.kb-b { animation: kbPanRight 5.4s linear forwards; }
+.hero-cinema .cinema-slide.kb-c { animation: kbZoomOut 5.4s linear forwards; }
+.hero-cinema .cinema-slide.kb-d { animation: kbPanUp 5.4s linear forwards; }
 @keyframes kbZoomIn   { from { transform: scale(1); }              to { transform: scale(1.12); } }
 @keyframes kbPanRight { from { transform: scale(1.12) translateX(-2.5%); } to { transform: scale(1.12) translateX(2.5%); } }
 @keyframes kbZoomOut  { from { transform: scale(1.14); }           to { transform: scale(1.02); } }
@@ -737,7 +737,7 @@ body.is-loading { overflow: hidden; }
   border-radius: 4px;
   background: linear-gradient(90deg, var(--red-bright), #ff8397);
   transform-origin: left center;
-  animation: dotProgress 8s linear forwards;
+  animation: dotProgress 5s linear forwards;
 }
 @keyframes dotProgress {
   from { transform: translateY(-50%) scaleX(0); }
@@ -1397,8 +1397,8 @@ body.is-loading { overflow: hidden; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 48px;
+  grid-template-columns: 1.5fr 1fr 1.3fr;
+  gap: 56px;
   padding-bottom: 60px;
 }
 .footer-brand img { width: 84px; margin-bottom: 20px; }
@@ -2128,6 +2128,7 @@ textarea.form-control { min-height: 130px; resize: vertical; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > .footer-brand { grid-column: 1 / -1; }
   .master-spotlight { grid-template-columns: 1fr; gap: 48px; }
   .split-section { grid-template-columns: 1fr; }
   .split-img { min-height: 420px; }
@@ -2368,6 +2369,122 @@ h3, h4 {
 }
 .gallery-item:hover .gallery-caption,
 .gallery-item:focus-visible .gallery-caption { opacity: 1; transform: none; }
+
+/* Photo headers on value pillars (about page) */
+.pillar .fb-photo {
+  margin: -36px -30px 0;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+.pillar .fb-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pillar:hover .fb-photo img { transform: scale(1.07); }
+.pillar .fb-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 30, 63, 0.35) 100%);
+}
+.pillar .fb-photo + .pillar-num {
+  margin-top: -23px;
+  position: relative;
+  z-index: 2;
+  border: 4px solid var(--white);
+}
+
+/* Age-card headers with photo backgrounds */
+.age-card-header { position: relative; }
+.age-card-header .age-photo { position: absolute; inset: 0; z-index: 0; }
+.age-card-header .age-photo img { width: 100%; height: 100%; object-fit: cover; }
+.age-card-header .age-photo::after { content: ''; position: absolute; inset: 0; }
+.age-card:nth-child(1) .age-photo::after { background: linear-gradient(135deg, rgba(18, 87, 196, 0.88), rgba(11, 63, 143, 0.93)); }
+.age-card:nth-child(2) .age-photo::after { background: linear-gradient(135deg, rgba(230, 41, 63, 0.88), rgba(163, 18, 38, 0.93)); }
+.age-card:nth-child(3) .age-photo::after { background: linear-gradient(135deg, rgba(16, 43, 87, 0.9), rgba(10, 30, 63, 0.94)); }
+.age-card-header > i, .age-card-header > h3, .age-card-header > .age-range { position: relative; z-index: 1; }
+
+/* Master spotlight: cleaner portrait treatment */
+.master-spotlight { align-items: center; }
+.master-spotlight-img::before, .master-spotlight-img::after { display: none; }
+.master-spotlight-img .frame {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 5px solid rgba(255, 255, 255, 0.12);
+}
+.master-spotlight-img .frame img { height: auto; max-height: 540px; }
+
+/* Google review badge */
+.g-badge { position: absolute; top: 24px; right: 24px; width: 26px; height: 26px; }
+.g-badge svg { width: 100%; height: 100%; display: block; }
+.review-track .testimonial-card::before { content: none; }
+
+/* Camp rates */
+.rate-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+.rate-card {
+  position: relative;
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px 26px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-spring), box-shadow var(--transition);
+}
+.rate-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.rate-card.featured { border-color: var(--red); box-shadow: var(--shadow-red); }
+.rate-card .rate-flag {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.rate-card .rate-name {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 10px;
+}
+.rate-card .rate-price {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--ink);
+  line-height: 1;
+}
+.rate-card .rate-price .per { font-size: 1rem; color: var(--mist); font-family: var(--font-body); font-weight: 700; }
+.rate-card .rate-note { font-size: 0.85rem; font-weight: 700; color: var(--slate); margin-top: 10px; }
+.rate-card.featured .rate-note { color: var(--red); }
+@media (max-width: 900px) { .rate-grid { grid-template-columns: 1fr; } }
+
+/* Pattern cards with watch links */
+.pattern-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--red);
+  position: relative;
+}
+.pattern-link i { font-size: 0.9rem; }
+.pattern-link:hover { color: var(--red-dark); text-decoration: underline; text-underline-offset: 3px; }
+.section-navy .pattern-link { color: #ff8397; }
+.section-navy .pattern-link:hover { color: var(--white); }
 
 /* Belt note sits clear of the belt cards */
 .belt-note {

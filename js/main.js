@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var dotsWrap = document.querySelector('.hero-dots');
     var current = 0;
     var timer = null;
-    var DURATION = 8000;
+    var DURATION = 5000;
     var kbClasses = ['kb-a', 'kb-b', 'kb-c', 'kb-d'];
 
     /* First slide paints immediately; the rest load after the page is
@@ -217,6 +217,24 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Interior page heroes get a simple in-class too */
   var pageHero = document.querySelector('.page-hero');
   if (pageHero) pageHero.classList.add('hero-in');
+
+  /* Scroll cue actually scrolls to the first content section */
+  var scrollCue = document.querySelector('.hero-scroll');
+  if (scrollCue) {
+    scrollCue.style.cursor = 'pointer';
+    scrollCue.setAttribute('role', 'button');
+    scrollCue.setAttribute('tabindex', '0');
+    scrollCue.setAttribute('aria-label', 'Scroll to content');
+    var scrollDown = function () {
+      var next = document.querySelector('.hero + *');
+      var target = next ? next.nextElementSibling || next : null;
+      (target || next).scrollIntoView({ behavior: 'smooth' });
+    };
+    scrollCue.addEventListener('click', scrollDown);
+    scrollCue.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollDown(); }
+    });
+  }
 
   /* ------------------------------------------------------------
      SCROLL REVEALS — IntersectionObserver core (GSAP-free path)
