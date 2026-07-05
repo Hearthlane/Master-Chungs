@@ -1463,7 +1463,7 @@ body.is-loading { overflow: hidden; }
    ========================================================================== */
 .page-hero {
   position: relative;
-  min-height: 520px;
+  min-height: 620px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1484,7 +1484,7 @@ body.is-loading { overflow: hidden; }
     radial-gradient(50% 80% at 90% 100%, rgba(206, 32, 54, 0.35), transparent 70%);
 }
 .page-hero .container { position: relative; z-index: 2; width: 100%; }
-.page-hero-content { padding: 120px 0 130px; }
+.page-hero-content { padding: 150px 0 160px; }
 .breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -2316,6 +2316,44 @@ h3, h4 {
 .rating-badge .score { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.02em; }
 .rating-badge i { color: #f7b32b; }
 
+/* Google Reviews summary card */
+.google-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 26px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+.google-summary .gs-logo { width: 42px; height: 42px; flex-shrink: 0; }
+.google-summary .gs-logo svg { width: 100%; height: 100%; display: block; }
+.google-summary .gs-meta { display: flex; flex-direction: column; gap: 3px; }
+.google-summary .gs-brand {
+  font-size: 0.72rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mist);
+}
+.google-summary .gs-top { display: flex; align-items: center; gap: 10px; }
+.google-summary .gs-score { font-family: var(--font-display); font-size: 2rem; color: var(--ink); line-height: 1; }
+.google-summary .gs-stars { color: #fbbc05; font-size: 1rem; letter-spacing: 1px; }
+.google-summary .gs-sub { font-size: 0.86rem; font-weight: 700; color: var(--slate); }
+.google-summary .gs-sub strong { color: var(--ink); }
+.google-summary .gs-cta {
+  margin-left: 8px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--blue-bright), var(--blue));
+  color: var(--white); font-family: var(--font-body); font-weight: 800; font-size: 0.86rem;
+  white-space: nowrap; transition: transform var(--transition), box-shadow var(--transition);
+}
+.google-summary .gs-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue); }
+@media (max-width: 560px) {
+  .google-summary { flex-direction: column; gap: 14px; padding: 22px; text-align: center; }
+  .google-summary .gs-top, .google-summary .gs-meta { align-items: center; }
+  .google-summary .gs-cta { margin-left: 0; }
+}
+
 /* ==========================================================================
    GALLERY CAPTIONS
    ========================================================================== */
@@ -2456,10 +2494,16 @@ h3, h4 {
 .section-navy .pattern-link:hover { color: var(--white); }
 
 /* Master portrait: show the full standing figure, no leg crop */
-.split-img.portrait-frame { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); }
-.split-img.portrait-frame img { object-fit: contain; object-position: center bottom; }
+/* Head-master portrait: blend the panel with the photo's own blue-starburst
+   backdrop so the contained figure reads as a deliberate portrait, not a gap */
+.split-img.portrait-frame {
+  background: radial-gradient(ellipse 60% 75% at 50% 42%, #1257c4 0%, #0b3f8f 38%, #0a1e3f 100%);
+}
+.split-img.portrait-frame img { object-fit: contain; object-position: center; padding: 24px 0; }
+.split-img.portrait-frame .split-img-overlay { display: none; }
 @media (max-width: 1024px) {
-  .split-img.portrait-frame { min-height: 520px; }
+  .split-img.portrait-frame { min-height: 560px; }
+  .split-img.portrait-frame img { padding: 40px 0; }
 }
 
 /* After-school benefits: photo above the checklist */
@@ -2549,7 +2593,7 @@ a.feature-box:hover .fb-photo::before { opacity: 1; transform: none; }
   margin-top: 48px;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  min-height: 280px;
+  min-height: 420px;
   display: flex;
   align-items: flex-end;
   box-shadow: var(--shadow-lg);
@@ -2560,7 +2604,7 @@ a.feature-box:hover .fb-photo::before { opacity: 1; transform: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 35%;
 }
 .breaking-banner::after {
   content: '';
