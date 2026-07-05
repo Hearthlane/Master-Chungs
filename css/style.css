@@ -744,45 +744,6 @@ body.is-loading { overflow: hidden; }
   to { transform: translateY(-50%) scaleX(1); }
 }
 
-/* Scroll cue */
-.hero-scroll {
-  position: absolute;
-  left: 50%;
-  bottom: 30px;
-  transform: translateX(-50%);
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: #9fb2d6;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-.hero-scroll .mouse {
-  width: 24px;
-  height: 38px;
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  border-radius: 14px;
-  display: flex;
-  justify-content: center;
-  padding-top: 7px;
-}
-.hero-scroll .mouse span {
-  width: 4px;
-  height: 8px;
-  border-radius: 3px;
-  background: var(--red-bright);
-  animation: wheel 1.8s ease-in-out infinite;
-}
-@keyframes wheel {
-  0% { opacity: 1; transform: translateY(0); }
-  70% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 0; transform: translateY(0); }
-}
-
 /* ==========================================================================
    MARQUEE VALUE STRIP
    ========================================================================== */
@@ -2475,7 +2436,8 @@ h3, h4 {
 .rate-card .rate-price .per { font-size: 1rem; color: var(--mist); font-family: var(--font-body); font-weight: 700; }
 .rate-card .rate-note { font-size: 0.85rem; font-weight: 700; color: var(--slate); margin-top: 10px; }
 .rate-card.featured .rate-note { color: var(--red); }
-@media (max-width: 900px) { .rate-grid { grid-template-columns: 1fr; } }
+.rate-grid.two-col { grid-template-columns: 1fr 1fr; max-width: 680px; margin-left: auto; margin-right: auto; }
+@media (max-width: 900px) { .rate-grid, .rate-grid.two-col { grid-template-columns: 1fr; } }
 
 /* Pattern cards with watch links */
 .pattern-link {
@@ -2577,6 +2539,9 @@ a.feature-box:hover .fb-photo::before { opacity: 1; transform: none; }
 .pattern-video .pv-name { font-family: var(--font-body); font-weight: 800; color: var(--ink); font-size: 0.95rem; }
 @media (max-width: 1024px) { .pattern-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .pattern-grid { grid-template-columns: 1fr; } }
+.pattern-grid.three-col { grid-template-columns: repeat(3, 1fr); max-width: 900px; margin: 0 auto; }
+@media (max-width: 1024px) { .pattern-grid.three-col { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .pattern-grid.three-col { grid-template-columns: 1fr; } }
 
 /* Breaking banner: full-width photo moment inside the belt-system section */
 .breaking-banner {

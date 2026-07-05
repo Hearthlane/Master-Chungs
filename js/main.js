@@ -218,24 +218,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var pageHero = document.querySelector('.page-hero');
   if (pageHero) pageHero.classList.add('hero-in');
 
-  /* Scroll cue actually scrolls to the first content section */
-  var scrollCue = document.querySelector('.hero-scroll');
-  if (scrollCue) {
-    scrollCue.style.cursor = 'pointer';
-    scrollCue.setAttribute('role', 'button');
-    scrollCue.setAttribute('tabindex', '0');
-    scrollCue.setAttribute('aria-label', 'Scroll to content');
-    var scrollDown = function () {
-      var next = document.querySelector('.hero + *');
-      var target = next ? next.nextElementSibling || next : null;
-      (target || next).scrollIntoView({ behavior: 'smooth' });
-    };
-    scrollCue.addEventListener('click', scrollDown);
-    scrollCue.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollDown(); }
-    });
-  }
-
   /* ------------------------------------------------------------
      SCROLL REVEALS — IntersectionObserver core (GSAP-free path)
      ------------------------------------------------------------ */
