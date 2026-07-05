@@ -2486,6 +2486,91 @@ h3, h4 {
 .section-navy .pattern-link { color: #ff8397; }
 .section-navy .pattern-link:hover { color: var(--white); }
 
+/* Master portrait: show the full standing figure, no leg crop */
+.split-img.portrait-frame { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%); }
+.split-img.portrait-frame img { object-fit: contain; object-position: center bottom; }
+@media (max-width: 1024px) {
+  .split-img.portrait-frame { min-height: 520px; }
+}
+
+/* After-school benefits: photo above the checklist */
+.benefit-photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 26px;
+  aspect-ratio: 16 / 10;
+}
+.benefit-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Field-trip cards become links */
+a.feature-box { text-decoration: none; color: inherit; display: block; }
+a.feature-box .fb-photo::before {
+  content: '\f35d';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--red);
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+a.feature-box:hover .fb-photo::before { opacity: 1; transform: none; }
+
+/* Pattern video grid (embedded Taegeuk 1-8) */
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.pattern-video {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-spring), box-shadow var(--transition);
+}
+.pattern-video:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.pattern-video .pv-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--navy);
+}
+.pattern-video .pv-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.pattern-video .pv-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+}
+.pattern-video .pv-num {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--red-bright), var(--red-dark));
+}
+.pattern-video:nth-child(even) .pv-num { background: linear-gradient(135deg, var(--blue-bright), var(--blue)); }
+.pattern-video .pv-name { font-family: var(--font-body); font-weight: 800; color: var(--ink); font-size: 0.95rem; }
+@media (max-width: 1024px) { .pattern-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .pattern-grid { grid-template-columns: 1fr; } }
+
 /* Belt note sits clear of the belt cards */
 .belt-note {
   text-align: center;
