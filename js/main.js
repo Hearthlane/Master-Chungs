@@ -87,10 +87,11 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', onNavScroll, { passive: true });
   onNavScroll();
 
-  /* ---------- Active nav link ---------- */
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  /* ---------- Active nav link (matches both /camp and /camp.html) ---------- */
+  var norm = function (s) { return (s || '').split('?')[0].split('#')[0].replace(/\.html$/, '') || 'index'; };
+  var currentPage = norm(window.location.pathname.split('/').pop());
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function (link) {
-    if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    if (norm(link.getAttribute('href')) === currentPage) link.classList.add('active');
   });
 
   /* ---------- Mobile menu ---------- */

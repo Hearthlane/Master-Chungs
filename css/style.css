@@ -432,6 +432,17 @@ body.is-loading { overflow: hidden; }
 .mobile-menu.open a:nth-child(7) { transition-delay: 0.44s; }
 .mobile-menu.open a:nth-child(8) { transition-delay: 0.50s; }
 .mobile-menu a:hover { color: #ff96a5; }
+.mobile-menu a.active:not(.btn) { color: #ffcf47; }
+.mobile-menu a.active:not(.btn)::after {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 4px;
+  margin: 6px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #ffcf47, #f5a623);
+}
+.mobile-menu .btn.active { background: linear-gradient(135deg, var(--red-bright) 0%, var(--red-dark) 100%); color: var(--white); }
 .mobile-menu .btn { font-size: 1rem; margin-top: 18px; color: var(--white); }
 .overlay { display: none; }
 
