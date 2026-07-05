@@ -29,3 +29,6 @@ val-excellence.jpg | "kid taekwondo black belt medal" | Asian girl in a dobok pe
 as-intro.jpg | "children walking school backpacks smiling" | Joyful group of kids heading to school on a sunny day, ready to learn and have fun together. | by Yan Krukau | https://www.pexels.com/photo/female-girls-going-to-school-8617515/
 as-benefits.jpg | "children doing homework together table" | Young children enjoying art and drawing activities in a warm and inviting classroom setting. | by Anastasia  Shuraeva | https://www.pexels.com/photo/young-girls-doing-artwork-while-sitting-on-their-chairs-8466713/
 camp-indoor.jpg | "children playing board game indoors classroom" | Teacher instructing young students in chess at school, enhancing critical thinking. | by Anastasia  Shuraeva | https://www.pexels.com/photo/woman-teaching-children-to-play-chess-8465440/
+
+coach-kids.jpg | An older man instructs a young girl in taekwondo, tying her karate belt. | by cottonbro studio | https://www.pexels.com/photo/an-elderly-man-tying-the-belt-of-the-little-girl-7991204/
+belts-row.jpg | Two martial artists in white uniforms holding black belts, showcasing discipline and strength. | by Artem Podrez | https://www.pexels.com/photo/close-up-shot-of-two-people-wearing-karategi-and-black-belt-6253307/
