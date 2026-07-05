@@ -2408,9 +2408,10 @@ h3, h4 {
 .age-card-header .age-photo { position: absolute; inset: 0; z-index: 0; }
 .age-card-header .age-photo img { width: 100%; height: 100%; object-fit: cover; }
 .age-card-header .age-photo::after { content: ''; position: absolute; inset: 0; }
-.age-card:nth-child(1) .age-photo::after { background: linear-gradient(135deg, rgba(18, 87, 196, 0.88), rgba(11, 63, 143, 0.93)); }
-.age-card:nth-child(2) .age-photo::after { background: linear-gradient(135deg, rgba(230, 41, 63, 0.88), rgba(163, 18, 38, 0.93)); }
-.age-card:nth-child(3) .age-photo::after { background: linear-gradient(135deg, rgba(16, 43, 87, 0.9), rgba(10, 30, 63, 0.94)); }
+/* Bottom-weighted scrim: photo reads clearly at top, text stays legible at bottom */
+.age-card:nth-child(1) .age-photo::after { background: linear-gradient(180deg, rgba(18, 87, 196, 0.28) 0%, rgba(11, 63, 143, 0.4) 45%, rgba(7, 26, 58, 0.86) 100%); }
+.age-card:nth-child(2) .age-photo::after { background: linear-gradient(180deg, rgba(230, 41, 63, 0.28) 0%, rgba(163, 18, 38, 0.4) 45%, rgba(74, 10, 20, 0.86) 100%); }
+.age-card:nth-child(3) .age-photo::after { background: linear-gradient(180deg, rgba(16, 43, 87, 0.3) 0%, rgba(10, 30, 63, 0.42) 45%, rgba(5, 14, 32, 0.88) 100%); }
 .age-card-header > i, .age-card-header > h3, .age-card-header > .age-range { position: relative; z-index: 1; }
 
 /* Master spotlight: cleaner portrait treatment */
@@ -2576,6 +2577,46 @@ a.feature-box:hover .fb-photo::before { opacity: 1; transform: none; }
 .pattern-video .pv-name { font-family: var(--font-body); font-weight: 800; color: var(--ink); font-size: 0.95rem; }
 @media (max-width: 1024px) { .pattern-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .pattern-grid { grid-template-columns: 1fr; } }
+
+/* Breaking banner: full-width photo moment inside the belt-system section */
+.breaking-banner {
+  position: relative;
+  margin-top: 48px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: var(--shadow-lg);
+}
+.breaking-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.breaking-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(75deg, rgba(7, 19, 43, 0.92) 0%, rgba(7, 19, 43, 0.55) 45%, rgba(7, 19, 43, 0.15) 100%);
+}
+.breaking-banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 36px 40px;
+  max-width: 460px;
+}
+.breaking-banner-content .tag { background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.25); color: var(--white); backdrop-filter: blur(6px); }
+.breaking-banner-content .tag i { color: #ff8397; }
+.breaking-banner-content h3 { color: var(--white); font-size: 1.6rem; margin: 14px 0 8px; }
+.breaking-banner-content p { color: #d3ddf0; font-size: 0.95rem; line-height: 1.7; }
+@media (max-width: 640px) {
+  .breaking-banner { min-height: 220px; }
+  .breaking-banner-content { padding: 26px 22px; max-width: none; }
+}
 
 /* Belt note sits clear of the belt cards */
 .belt-note {
