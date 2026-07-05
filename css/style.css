@@ -360,7 +360,12 @@ body.is-loading { overflow: hidden; }
   transition: color var(--transition), background var(--transition);
 }
 .nav-links a:hover { color: var(--red); background: var(--paper-warm); }
-.nav-links a.active { color: var(--white); background: var(--blue); box-shadow: var(--shadow-blue); }
+.nav-links a.active {
+  color: var(--ink);
+  background: linear-gradient(135deg, #ffcf47 0%, #f5a623 100%);
+  box-shadow: 0 8px 20px rgba(245, 166, 35, 0.4);
+}
+.nav-links a.active:hover { color: var(--ink); background: linear-gradient(135deg, #ffcf47 0%, #f5a623 100%); }
 
 .nav-cta { display: flex; align-items: center; gap: 14px; }
 
