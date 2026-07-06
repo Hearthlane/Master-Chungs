@@ -547,10 +547,10 @@ body.is-loading { overflow: hidden; }
 .hero-cinema .cinema-slide.kb-b { animation: kbPanRight 5.4s linear forwards; }
 .hero-cinema .cinema-slide.kb-c { animation: kbZoomOut 5.4s linear forwards; }
 .hero-cinema .cinema-slide.kb-d { animation: kbPanUp 5.4s linear forwards; }
-@keyframes kbZoomIn   { from { transform: scale(1); }              to { transform: scale(1.12); } }
-@keyframes kbPanRight { from { transform: scale(1.12) translateX(-2.5%); } to { transform: scale(1.12) translateX(2.5%); } }
-@keyframes kbZoomOut  { from { transform: scale(1.14); }           to { transform: scale(1.02); } }
-@keyframes kbPanUp    { from { transform: scale(1.12) translateY(2.5%); }  to { transform: scale(1.12) translateY(-2.5%); } }
+@keyframes kbZoomIn   { from { transform: scale(1); }              to { transform: scale(1.06); } }
+@keyframes kbPanRight { from { transform: scale(1.06) translateX(-2%); } to { transform: scale(1.06) translateX(2%); } }
+@keyframes kbZoomOut  { from { transform: scale(1.07); }           to { transform: scale(1.0); } }
+@keyframes kbPanUp    { from { transform: scale(1.06) translateY(2%); }  to { transform: scale(1.06) translateY(-2%); } }
 
 /* Cinematic overlays: navy→transparent wash + red/blue duotone edges + grain */
 .hero-veil {
