@@ -375,23 +375,24 @@ body.is-loading { overflow: hidden; }
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 12px;
-  background: var(--paper);
+  background: linear-gradient(135deg, #ffcf47 0%, #f5a623 100%);
+  box-shadow: 0 6px 18px rgba(245, 166, 35, 0.42);
   align-items: center;
   position: relative;
   z-index: 96;
 }
 .hamburger span {
   display: block;
-  width: 20px;
+  width: 22px;
   height: 2.5px;
   border-radius: 2px;
-  background: var(--ink);
+  background: #10224a;
   transition: transform 0.35s var(--ease-spring), opacity 0.2s ease, background 0.2s ease;
 }
-.hamburger.open span { background: var(--ink); }
+.hamburger.open span { background: #10224a; }
 .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
@@ -405,8 +406,11 @@ body.is-loading { overflow: hidden; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  justify-content: flex-start;
+  gap: 0;
+  padding: calc(var(--nav-h) + 24px) 24px calc(env(safe-area-inset-bottom, 0px) + 40px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.45s ease, visibility 0.45s ease;
@@ -414,10 +418,13 @@ body.is-loading { overflow: hidden; }
 .mobile-menu.open { opacity: 1; visibility: visible; }
 .mobile-menu a {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: clamp(1.15rem, 5.4vw, 1.4rem);
   font-weight: 800;
   color: var(--white);
-  padding: 7px 22px;
+  width: min(420px, 84vw);
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.5s ease, transform 0.5s var(--ease-spring), color 0.25s ease;
@@ -443,7 +450,13 @@ body.is-loading { overflow: hidden; }
   background: linear-gradient(135deg, #ffcf47, #f5a623);
 }
 .mobile-menu .btn.active { background: linear-gradient(135deg, var(--red-bright) 0%, var(--red-dark) 100%); color: var(--white); }
-.mobile-menu .btn { font-size: 1rem; margin-top: 18px; color: var(--white); }
+.mobile-menu .btn {
+  font-size: 1.05rem;
+  margin-top: 28px;
+  width: min(420px, 84vw);
+  border-bottom: none;
+  color: var(--white);
+}
 .overlay { display: none; }
 
 /* ==========================================================================
